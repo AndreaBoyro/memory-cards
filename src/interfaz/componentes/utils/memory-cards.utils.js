@@ -1,7 +1,7 @@
 export const listaValoresDificultadCombo = [
-  { code: 1, name: 'Fácil' },
-  { code: 2, name: 'Medio' },
-  { code: 3, name: 'Difícil' },
+  { code: 1, name: "Fácil" },
+  { code: 2, name: "Medio" },
+  { code: 3, name: "Difícil" },
 ];
 
 export const valoresCartas = [
@@ -14,9 +14,6 @@ export const valoresCartas = [
   { id: 7 },
   { id: 8 },
   { id: 9 },
-  { id: 10 },
-  { id: 11 },
-  { id: 12 },
 ];
 
 export const mapRelacionDificultadMilis = {
