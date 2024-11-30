@@ -1,4 +1,3 @@
-import icon from "../../estilos/media/question-mark.svg";
 export const Card = ({ card, onClick }) => {
   return (
     <div
@@ -17,7 +16,7 @@ export const Card = ({ card, onClick }) => {
         </div>
       ) : (
         <div className="card-back">
-          <img src={icon} alt="Seleccionar carta" />
+          <img src="assets/media/question-mark.svg" alt="Seleccionar carta" />
         </div>
       )}
     </div>
