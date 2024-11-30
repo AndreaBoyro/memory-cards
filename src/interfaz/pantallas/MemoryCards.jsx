@@ -7,7 +7,7 @@ import { HOME_ROUTE } from "../navegacion/routes";
 import "../../estilos/index.css";
 import { MainTemplate } from "../componentes/Main-template.component";
 
-export const MemoryCards = () => {
+export function MemoryCards() {
   const { state } = useLocation();
   const estaAutenticado = state && state.nombreJugador;
   const [nivelDificultad, setNivelDificultad] = useState(
@@ -32,4 +32,4 @@ export const MemoryCards = () => {
   ) : (
     <Navigate to={HOME_ROUTE} replace />
   );
-};
+}

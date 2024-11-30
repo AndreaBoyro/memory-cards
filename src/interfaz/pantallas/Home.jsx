@@ -5,7 +5,7 @@ import { MEMORY_CARDS_ROUTE } from "../navegacion/routes";
 import { Header } from "../componentes/Header.component";
 import { MainTemplate } from "../componentes/Main-template.component";
 
-export const Home = () => {
+export function Home() {
   const navigate = useNavigate();
   const [nombreJugador, setNombreJugador] = useState();
 
@@ -30,13 +30,15 @@ export const Home = () => {
     <>
       <Header esHome />
       <MainTemplate>
-        <div className="home-wrapper">
+        <div className="home-wrapper" data-testid="pantalla_home">
           <div className="jugador-input-wrapper">
             <div className="input-label">
-              <label htmlFor="jugador">Introduce tu nombre:</label>
+              <label htmlFor="jugador">Introduce tu nombre *: </label>
             </div>
             <input
               id="jugador"
+              data-testid="pantalla_home_input"
+              required
               className="jugador-input"
               onChange={handleOnChange}
             ></input>
@@ -47,7 +49,12 @@ export const Home = () => {
             )}
           </div>
           <div>
-            <button className="boton-generico" onClick={handleOnClick}>
+            <button
+              className="boton-generico"
+              data-testid="pantalla_home_boton"
+              disabled={!esNombreCorrecto()}
+              onClick={handleOnClick}
+            >
               Comenzar
             </button>
           </div>
@@ -55,4 +62,4 @@ export const Home = () => {
       </MainTemplate>
     </>
   );
-};
+}

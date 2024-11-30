@@ -76,6 +76,16 @@ code {
   padding: 12px;
   text-transform: uppercase;
 }
+.boton-generico[disabled] {
+  background-color: #638a8a;
+  border-radius: 0;
+  border: 1px solid #028484;
+  color: #ffffff;
+  font-weight: bolder;
+  font-size: 13px;
+  padding: 12px;
+  text-transform: uppercase;
+}
 
 .boton-generico:hover {
   background-color: #ffffff;

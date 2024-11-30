@@ -1,10 +1,14 @@
-import { useState } from 'react';
-import { Card } from './Card.component';
-import { useTableroHook } from './hooks/Tablero.hook';
-import { mapRelacionDificultadMilis, MILIS_RESTART } from './utils/memory-cards.utils';
+import { useState } from "react";
+import { Card } from "./Card.component";
+import { useTableroHook } from "./hooks/Tablero.hook";
+import {
+  mapRelacionDificultadMilis,
+  MILIS_RESTART,
+} from "./utils/memory-cards.utils";
 
 export const Tablero = ({ nivelDificultad, setJuegoEnCurso }) => {
-  const { obtenerNuevaTirada, obtenerCartasFlipped, obtenerNumeroABuscar } = useTableroHook();
+  const { obtenerNuevaTirada, obtenerCartasFlipped, obtenerNumeroABuscar } =
+    useTableroHook();
 
   const [cardsData, setcardsData] = useState(obtenerNuevaTirada());
   const [numBuscar, setNumBuscar] = useState(undefined);
@@ -74,14 +78,20 @@ export const Tablero = ({ nivelDificultad, setJuegoEnCurso }) => {
 
   return (
     <>
-      <div className='tablero-wrapper'>
+      <div className="tablero-wrapper" data-testid="componente-tablero">
         {mostarTablero ? (
           <>
-            <div className='tablero-cabecera'>
-              <div className='puntos-tablero'>
+            <div className="tablero-cabecera">
+              <div
+                className="puntos-tablero"
+                data-testid="componente-tablero-puntos-usuario"
+              >
                 <span>Puntos obtenidos: {puntosUsuario}</span>
               </div>
-              <div className='num-buscar-tablero'>
+              <div
+                className="num-buscar-tablero"
+                data-testid="componente-tablero-numero-buscar"
+              >
                 {numBuscar !== undefined && (
                   <span>
                     ¿Dónde esta el número <strong>{numBuscar}</strong>?
@@ -89,15 +99,28 @@ export const Tablero = ({ nivelDificultad, setJuegoEnCurso }) => {
                 )}
               </div>
             </div>
-            <div className='tablero-container'>
+            <div
+              className="tablero-container"
+              data-testid="componente-tablero-container"
+            >
               {cardsData.map((card) => {
-                return <Card key={card.id} card={card} onClick={comprobarCartaSeleccionada} />;
+                return (
+                  <Card
+                    key={card.id}
+                    card={card}
+                    onClick={comprobarCartaSeleccionada}
+                  />
+                );
               })}
             </div>
           </>
         ) : (
           <div>
-            <button className='boton-generico' onClick={onClickJugar}>
+            <button
+              className="boton-generico"
+              data-testid="componente-tablero-boton"
+              onClick={onClickJugar}
+            >
               Comenzar partida
             </button>
           </div>

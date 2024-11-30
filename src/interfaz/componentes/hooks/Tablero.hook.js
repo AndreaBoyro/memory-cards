@@ -24,8 +24,7 @@ const obtenerCartasFlipped = () => {
 const numRegistros = () => valoresCartas.length;
 
 const obtenerNumeroABuscar = () => {
-  console.log(valoresCartas.length);
-  return Math.floor(Math.random() * numRegistros()) + 1;
+    return Math.floor(Math.random() * numRegistros()) + 1;
 };
 
 export const useTableroHook = () => {

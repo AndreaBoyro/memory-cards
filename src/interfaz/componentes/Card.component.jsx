@@ -1,19 +1,22 @@
 export const Card = ({ card, onClick }) => {
   return (
     <div
-      className={`card-component  ${card.selected !== undefined ? ' card-selected-' + card.selected : ''}`}
+      className={`card-component  ${
+        card.selected !== undefined ? " card-selected-" + card.selected : ""
+      }`}
       id={card.id}
+      data-testid={"componente-tablero-card_" + card.id}
       onClick={() => onClick(card.id)}
     >
       {card.isFlipped ? (
-        <div className='card-front'>
+        <div className="card-front">
           <span>
             <strong>{card.id}</strong>
           </span>
         </div>
       ) : (
-        <div className='card-back'>
-          <img src='assets/media/question-mark.svg' alt='Seleccionar carta' />
+        <div className="card-back">
+          <img src="assets/media/question-mark.svg" alt="Seleccionar carta" />
         </div>
       )}
     </div>
